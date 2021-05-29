@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+.navbar-brand{
+    font-size: 2rem;
+    color: black;
+    font-family: 'Permanent Marker';
+    
+}
+
+.navbar-brand:hover{
+    color: black;
+}
+
+.nav-link{
+    margin-right: 10px;
+    margin-left: 10px;
+    color: black;
+    text-transform: uppercase;
+    font-family: 'Bree Serif', serif;
+}
+
+.nav-link:hover{
+     color: orangered;
+}

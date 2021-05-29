@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+.card{
+    border: none;
+    outline: none;
+    background-color:#fff;
+    border-radius: 25px;
+    
+
+}
+
+.text{
+    font-size: 13px;
+    color:#000;
+}
+
+.info{
+    font-family: 'Bree Serif', serif;
+    line-height: 17px;
+}
+
+.precio span{
+    color: #000000;
+    font-weight: bold;
+    font-size: 20px;
+}
+.color-b{
+    background-color: powderblue;
+}
