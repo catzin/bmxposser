@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { switchMap, tap } from 'rxjs/operators';
+import { Producto } from '../../interfaces/productos.interface';
+import { ProductosService } from '../../services/productos.service';
 
 @Component({
   selector: 'app-listado',
@@ -7,11 +11,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListadoComponent implements OnInit {
 
-  productos = [1,2,3,4,56,7,8,8];
+  productos:Producto[] = [];
 
-  constructor() { }
+
+  constructor(private actRoute:ActivatedRoute, private ps : ProductosService) { }
 
   ngOnInit(): void {
+
+    this.actRoute.params
+    .pipe(
+      switchMap((params) => this.ps.listadoProducto(params.tipo))
+    ).subscribe(resp =>{
+      this.productos = resp;
+    })
+  
+    
+
+  
   }
 
 }

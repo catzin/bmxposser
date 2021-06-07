@@ -1,0 +1,68 @@
+<div class="container py-5">
+        <div class="row justify-content-between">
+            
+                <div class="card shadow-lg bg-white rounded">
+                    <div class="card-header title text-center">producto</div>
+                    <div class="card-body py-5">
+
+                        <form [formGroup] = "formP" (ngSubmit)="onMultipleSubmit()">
+                        <div class="form-group mb-3">
+                            <input type="text" class="form-control" formControlName="nombre"   placeholder="nombre">
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <textarea class="form-control" formControlName="pdes" rows="5"></textarea>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <select class="form-select" formControlName="cate">
+                                     <option value="">--categoria--</option>
+                                     <option value = "{{i.categoria}}" *ngFor="let i of categorias">{{i.categoria}}</option>
+                                     
+
+                                </select>
+
+                            </div>
+                            <div class="col-6">
+                                <select  class="form-select" formControlName="marca"> 
+                                     <option value="">--marca--</option>
+                                     <option value = "{{i.marca}}" *ngFor="let i of marcas">{{i.marca}}</option>
+
+                                </select>
+
+                            </div>
+                        </div>
+
+                        <div class="row mb-2">
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="cantidad" placeholder="cantidad">
+                                </div>
+
+                            </div>
+                            <div class="col-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" formControlName="precio" placeholder="$precio">
+                                </div>
+
+                            </div>
+
+                        </div> 
+
+                        <div class="d-grid mb-4">
+                            <input type="file" multiple (change)="selectMultipleIMG($event)" formControlName="arch" class="form-control-file">
+                        </div>
+                        
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-outline-dark" [disabled]="!formP.valid">subir</button>
+                        </div>
+
+                        </form>
+
+                    </div>
+                </div>
+            
+        </div>
+        
+    </div>

@@ -1,7 +1,10 @@
 
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="#">BMXposser</a>
+     <div *ngIf="authservice.getToken();else carita"><a class="navbar-brand" routerLink ='/'>BMXposser <i class="far fa-angry" style="color: red;"></i></a></div>
+    <ng-template #carita>
+      <a class="navbar-brand" routerLink ='/'>BMXposser <i class="far fa-grimace"></i></a>
+    </ng-template>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"><i class="fas fa-bolt" style="color: orangered;size: 20px;"></i></span>
     </button>
@@ -21,13 +24,33 @@
 
 
         <li class="nav-item">
-          <a class="nav-link" routerLink=""><i class="fas fa-cart-plus" style="font-size: 20px;"></i></a>
+          <a class="nav-link" routerLink="/carrito"><i class="fas fa-cart-plus" style="font-size: 20px;"></i></a>
         </li>
+
+      
       </ul>
-      <div class="d-flex">
-        <a class="nav-link" routerLink="/auth/" style="cursor: pointer;">iniciar sesion</a>
+
+      <div *ngIf="authservice.getToken();else outBlock">
+        <div class="d-flex">
+          <a class="nav-link" routerLink="/auth" style="cursor: pointer;" (click)="salir()">cerrar sesion</a>
+            
+        </div>
 
       </div>
+
+      <ng-template #outBlock>
+
+        <div class="d-flex">
+          <a class="nav-link" routerLink="/auth" style="cursor: pointer;">iniciar sesion</a>
+            
+        </div>
+
+      </ng-template>
+
+         
+
+   
+      
     </div>
   </div>
 </nav>

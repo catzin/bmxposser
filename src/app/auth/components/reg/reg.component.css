@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+.title{
+    font-family:'Bree Serif', serif;;
+}
+
+.container-c{
+
+    background-image: url(' ../../../../assets/background.jpeg ');
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+}

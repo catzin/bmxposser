@@ -1,12 +1,11 @@
+<section class="listado">
+  <div class="container mt-4 py-5">
 
+    <div class="row">
+      <div class="col-6 col-lg-3 col-md-4" *ngFor="let i of productos">
+        <app-card-product [producto]= "i"></app-card-product>
+      </div>
+    </div>
+  </div>
 
-    <!---inicion container cards-->
-     <div class="container mb-5">
-       <div class="row">
-         <!--cards-->
-         <div class="col-6 col-md-4 col-lg-3" *ngFor="let i of productos">
-          <app-card-product></app-card-product>
-         </div>
-
-       </div>    
-     </div>
+</section>

@@ -2,52 +2,18 @@
     <div class="container mt-4 py-5">
 
         <div class="row ">
-            <div class="col-6 col-lg-3 col-md-4">
+            <div class="col-6 col-lg-3 col-md-4" *ngFor="let i of categorias">
                 <div class="card border-0 mb-3">
                     <div class="card-body">
-                        <a routerLink="./listado/frames">
-                        <img src="../../../../assets/frame.jpeg" class="img-fluid"style="border-radius: 15px;" alt="alt=">
+                        <a [routerLink]="['./listado',i.categoria]">
+                        <img [src]="'http://localhost:4000/'+i.img" class="img-fluid"style="border-radius: 15px;" alt="alt=">
                         </a>
-                        <h6 class="text-center text-dark title-prod">frames</h6>
+                        <h6 class="text-center text-dark title-prod">{{i.categoria}}</h6>
                         
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-lg-3 col-md-4">
-                <div class="card border-0 mb-3">
-                    <div class="card-body">
-                        <img src="../../../../assets/fork.jpeg" class="img-fluid"style="border-radius: 15px;" alt="alt=">
-                        <h6 class="text-center text-dark title-prod">Forks</h6>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-6 col-lg-3 col-md-4">
-                <div class="card border-0 mb-3">
-                    <div class="card-body">
-                        <img src="../../../../assets/crank.jpeg" class="img-fluid"style="border-radius: 15px;" alt="alt=">
-                        <h6 class="text-center text-dark title-prod">Cranck</h6>
-                    </div>
-                </div>
-            </div>
-
-             <div class="col-6 col-lg-3 col-md-4">
-                <div class="card border-0 mb-3">
-                    <div class="card-body">
-                        <img src="../../../../assets/grips.jpeg" class="img-fluid"style="border-radius: 15px;" alt="alt=">
-                        <h6 class="text-center text-dark title-prod">grips</h6>
-                    </div>
-                </div>
-            </div>
-            <!---<div class="col-12 col-lg-3 col-md-3" *ngFor="let i of marcas">
-                <div class="card border-0 bg-light mb-3">
-                    <div class="card-body">
-                       
-                        <img [src]="'http://localhost:4000/'+i.path" class="img-fluid"style="border-radius: 15px;" alt="">
-                        </a>
-                    </div>
-                </div>
-            </div>---->
+        
 
         </div>
     </div>

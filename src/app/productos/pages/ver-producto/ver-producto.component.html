@@ -1,0 +1,96 @@
+<div class="container py-5 ">
+
+    <div class="row mb-3">
+     
+        <div class="col-12 col-md-6 col-lg-6">
+
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+        <div class="d-flex justify-content-center">
+            <img *ngIf="bande" [src]="'http://localhost:4000/'+imgs[0]?.path" class="d-block w-100" alt="...">
+
+        </div>
+      
+     
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+        <div class="d-flex justify-content-center">
+            <img *ngIf="bande" [src]="'http://localhost:4000/'+imgs[1]?.path" class="d-block w-100" alt="...">
+
+        </div>
+      
+      
+    </div>
+  
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+        
+
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+            <div class="card bg-light">
+                <div class="card-header text-center">
+                    {{product?.nombre|titlecase}}
+                </div>
+
+                <div class="card-body text-center">
+                    <div class="text-center">
+                        <div class="text-primary">marca :</div>
+                        {{product?.marca}}
+                    </div>
+                    <div class="text-center text-primary">features:</div>
+                    {{product?.descripcion}}
+
+                    <hr>
+                    <div class="text-center">
+                        <h2>${{total}}</h2>
+                        
+                    </div>
+
+                    <form>
+                        <div class="row mt-4">
+                            <div class="col-6 col-md-6 col-lg-6">
+                                <select class="form-select" name="seleccionado" [(ngModel)]="selecionado" (change)="sumar()">
+                                
+
+                                         <option> -cantidad - </option>
+                                         <option  value="{{i}}" *ngFor="let i of cantidad">{{i}}</option>
+
+                         
+                                    
+                                    
+                                </select>
+                            </div>
+                            <div class="col-6 col-md-6 col-lg-6">
+                                <div class="d-grid">
+                                    <button class="btn btn-outline-dark" type="submit" >agregar <i class="fas fa-cart-arrow-down"></i></button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+ 
+
+
+
+</div>

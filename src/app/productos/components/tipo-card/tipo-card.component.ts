@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../../../admin/services/admin.service';
+import { ProductosService } from '../../services/productos.service';
+import { Categoria } from '../../interfaces/productos.interface';
 
 @Component({
   selector: 'app-tipo-card',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TipoCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ps:ProductosService) { }
+
+  categorias:Categoria[] = [];
 
   ngOnInit(): void {
+
+    this.ps.listadoCategoria().subscribe(resp =>{
+      this.categorias = resp;
+    })
+
   }
 
 }

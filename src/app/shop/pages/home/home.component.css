@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
-.main{
-    background: url(../../../../assets/img1.jpg)no-repeat;
-    background-size: cover;
-    height: 40vh;
-    background-position: 50% 50%;
-    width: 100%;
-}
+.img1{
 
+  max-width: 100%;
+  height: auto;
+}
 .main h1{
     font-size: 4rem;
     font-weight: 700;
@@ -50,9 +47,9 @@ h1{
 }
 
 .promo{
-    background: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url(../../../../assets/bmx.jpg) no-repeat;
+    background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)),url('../../../../assets/bmx.jpg')no-repeat;
     background-size: cover;
-    height: 70vh;
+    height: 80vh;
     width: 100%;
     
 }

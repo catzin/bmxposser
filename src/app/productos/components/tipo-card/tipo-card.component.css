@@ -1,33 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
 
-.box{
-    width: 300px;
-    height: 310px;
-    margin: auto;
-    padding-bottom: 10px;
-    border-radius: 15px;
-    box-shadow: 0 0 20px 2px rgba(0, 0, 0, .1);
-    transition: 0.3s;
-    flex-direction: center;
-    
-
-
-}
-
-.box img{
-
-    display: block;
-    width: 100%;
-    border-radius: 5px;
-    align-items: center;
-    position: relative;
-
-}
-
-.box:hover{
-    transform: scale(1.1);
-    z-index: 2;
-}
 
 .title-prod{
 
