@@ -13,11 +13,21 @@ import { AuthResponse } from '../../../auth/interfaces/interfaces';
 export class NavbarComponent implements OnInit {
 
  
-
+  band :boolean = false;
 
   constructor(public authservice:AuthService) { }
 
   ngOnInit(): void {
+
+    this.authservice.validarToken().subscribe(resp =>{
+      if(resp.ok){
+        
+        this.band = true;
+      }
+    })
+
+  
+    
     
   }
 

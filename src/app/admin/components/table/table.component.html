@@ -1,0 +1,59 @@
+<div class="container py-3">
+    <div class="row">
+        <div class="col-12 col-md-3 col-lg-3">
+            <form [formGroup]="form">
+            <label for="exampleFormControlSelect1" class="mb-3">Elige una categoria</label>
+            <select name="" id="exampleFormControlSelect1" class="form-select" formControlName="sel">
+                <option>--opcion--</option>
+                <option value="{{i}}" *ngFor="let i of categorias">{{i}}</option>  
+            </select>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+
+<table class="table" *ngIf="bandera">
+  <thead>
+    <tr>
+    <th scope="col">idproducto</th>
+      <th scope="col">producto</th>
+      <th scope="col">cantidad</th>
+      <th scope="col">actualizar(id,cantidad)</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    <tr *ngFor="let i of productos">
+      <th scope="row">{{i.idproducto}}</th>
+      <td>{{i.nombre}}</td>
+      <td>{{i.cantidad}}</td>
+      <td>
+          <form [formGroup]="formChange" (ngSubmit)="actualizar()">
+          <div class="row">
+              <div class="col-3 col-md-2">
+                  <input type="text" class="form-control" placeholder="idproducto" formControlName="id">
+
+              </div>
+              <div class="col-3 col-md-2">
+           
+                  <input type="text" class="form-control" placeholder="cantidad" formControlName="cantidad">
+              </div>
+
+              <div class="col-2">
+                  <div class="d-grid">
+                      <button class="btn btn-outline-danger" [disabled]="!formChange.valid">actualizar</button>
+                  </div>
+              </div>
+          </div>
+
+          </form>
+    
+
+      </td>
+     
+    </tr>
+  
+  </tbody>
+</table>

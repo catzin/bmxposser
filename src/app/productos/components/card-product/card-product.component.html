@@ -1,13 +1,34 @@
 
 <div class="card border-0 mb-3">
   <div class="card-body ">
-    <a [routerLink]= "['/merca/listado/ver',producto.nombre]">
-    <img [src]="'http://localhost:4000/'+producto.img" class="card-img-top"style="border-radius: 10px;" alt="alt=">
-    </a>
+
+      <div *ngIf="cantidad;else noimg">
+
+      <a [routerLink]= "['/merca/listado/ver',producto.nombre]">
+        <img [src]="'http://localhost:4000/'+producto.img" class="card-img-top"style="border-radius: 20px;" alt="alt=">
+      </a>
+
+      </div>
+      <ng-template #noimg>
+        <img [src]="'http://localhost:4000/'+producto.img" class="card-img-top"style="border-radius: 10px;" alt="alt=">
+      </ng-template>
+
     <h6 class="text-center text-dark title-prod mt-3">{{producto.nombre}}</h6>
-    <div class="d-grid mt-2">
-      <button class="btn btn-outline-dark" (click)="agregar()">agregar <i class="fas fa-cart-arrow-down"></i></button>
+    <h6 class="text-center text-dark title-prod mt-3">{{producto.marca}}</h6>
+  
+    <div *ngIf="cantidad; else none">
+      <div class="d-grid mt-2"> 
+        <button class="btn btn-outline-dark" (click)="agregar()">agregar <i class="fas fa-cart-arrow-down"></i></button>
+      </div>
     </div>
+
+    <ng-template #none>
+
+      <div class="d-grid mt-2"> 
+        <button class="btn btn-outline-danger" [disabled]="true"> agotado<i class="fas fa-cart-arrow-down"></i></button>
+      </div>
+
+    </ng-template>
                         
   </div>
 </div>

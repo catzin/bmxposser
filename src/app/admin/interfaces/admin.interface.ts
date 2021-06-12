@@ -8,6 +8,10 @@ export interface upload{
     msg:string;
 }
 
+export interface msg{
+    ok:boolean;
+    msg:string;
+}
 
 export interface categoria{
     categoria:string;

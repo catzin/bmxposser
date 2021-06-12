@@ -28,6 +28,12 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
     canActivate:[AdminGuard],
     canLoad:[AdminGuard]
+  },
+  {
+    path:'perfil',
+    loadChildren: () => import('./usuario/usuario.module').then(m => m.UsuarioModule),
+    canActivate:[ValidartokenGuard],
+    canLoad:[ValidartokenGuard]
   }
 
 

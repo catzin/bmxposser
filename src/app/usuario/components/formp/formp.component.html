@@ -1,0 +1,65 @@
+
+
+
+<div class="container mt-2">
+    <form [formGroup]="formp" (ngSubmit)="registrar()">
+    <div class="row mb-2">
+        <div class="col-md-6 mb-1">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="calle" formControlName="calle">
+            </div>
+
+        </div>
+        <div class="col-12 col-md-2 mb-1">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="num Int"  formControlName="numi">
+            </div>
+        </div>
+        <div class="col-12 col-md-2 mb-1">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="num Ext"  formControlName="nume">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-md-4 mb-1">
+            <div class="form-group"> 
+                <input type="text" class="form-control" placeholder="colonia"  formControlName="colonia"> 
+            </div>
+        </div>
+        <div class="col-12 col-md-4 mb-1">
+            <div class="form-group"> 
+                <input type="text" class="form-control" placeholder="ciudad"  formControlName="ciudad">
+            </div>
+            
+        </div>
+
+        <div class="col-12 col-md-4 mb-1">
+            <div class="form-group"> 
+                <input type="text" class="form-control" placeholder="estado"  formControlName="estado"> 
+            </div>
+            
+        </div>
+
+    </div>
+
+    <div class="row mt-2">
+        <div class="col-12 col-md-4 mb-1">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="codigo postal"  formControlName="cod">
+            </div>
+        </div>
+         <div class="col-12 col-md-4 mb-1">
+             <div class="d-grid mt-1">
+                 <button class="btn btn-outline-primary" [disabled]="!formp.valid">Registrar</button>
+             </div>
+         </div>
+    </div>
+
+    </form>
+</div>
+
+
+
+

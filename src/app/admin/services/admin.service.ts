@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment.prod';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { marca, categoria, upload } from '../interfaces/admin.interface';
+import { marca, categoria, upload, msg } from '../interfaces/admin.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -35,6 +35,15 @@ export class AdminService {
     const url = `${this.baseUrl}admin/agregarMarca`;
     const body = {marca};
     return this.http.post<upload>(url,body);
+  }
+
+  modificarProducto(idproducto:number,cantidad:number):Observable<msg>{
+
+    const url = `${this.baseUrl}admin/actualizar`;
+    const body = {idproducto,cantidad};
+
+    return this.http.post<msg>(url,body);
+
   }
 
 }

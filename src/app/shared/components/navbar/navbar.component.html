@@ -30,6 +30,15 @@
       
       </ul>
 
+
+      <div *ngIf="authservice.getToken()">
+        <div class="d-flex">
+           <a class="nav-link" routerLink="/perfil" style="cursor: pointer;">perfil</a>
+
+        </div>
+
+      </div>
+
       <div *ngIf="authservice.getToken();else outBlock">
         <div class="d-flex">
           <a class="nav-link" routerLink="/auth" style="cursor: pointer;" (click)="salir()">cerrar sesion</a>
@@ -37,6 +46,7 @@
         </div>
 
       </div>
+
 
       <ng-template #outBlock>
 

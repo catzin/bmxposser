@@ -69,7 +69,7 @@ export class FormProductComponent implements OnInit {
 
           position: 'center',
           icon: 'success',
-          title: resp.msg,
+          title: `${resp.msg}`,
           showConfirmButton: false,
           timer: 1500
         }).then(() => this.formP.reset());

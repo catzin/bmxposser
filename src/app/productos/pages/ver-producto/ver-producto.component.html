@@ -44,7 +44,7 @@
         <div class="col-12 col-md-6 col-lg-6">
             <div class="card bg-light">
                 <div class="card-header text-center">
-                    {{product?.nombre|titlecase}}
+                    <h2>{{product?.nombre|titlecase}}</h2>
                 </div>
 
                 <div class="card-body text-center">
@@ -56,6 +56,12 @@
                     {{product?.descripcion}}
 
                     <hr>
+
+                    <div class="text-center text-dark">
+                        <h3>$ {{precio}}</h3>
+                    </div>
+
+                    <hr>
                     <div class="text-center">
                         <h2>${{total}}</h2>
                         
@@ -65,19 +71,13 @@
                         <div class="row mt-4">
                             <div class="col-6 col-md-6 col-lg-6">
                                 <select class="form-select" name="seleccionado" [(ngModel)]="selecionado" (change)="sumar()">
-                                
-
-                                         <option> -cantidad - </option>
-                                         <option  value="{{i}}" *ngFor="let i of cantidad">{{i}}</option>
-
-                         
-                                    
-                                    
+                                 <option selected value = 0> 0 </option>
+                                 <option  value={{i}} *ngFor="let i of cantidad">{{i}}</option>
                                 </select>
                             </div>
                             <div class="col-6 col-md-6 col-lg-6">
                                 <div class="d-grid">
-                                    <button class="btn btn-outline-dark" type="submit" >agregar <i class="fas fa-cart-arrow-down"></i></button>
+                                    <button class="btn btn-outline-dark" [disabled]="!valido" (click)="agregar()">agregar <i class="fas fa-cart-arrow-down"></i></button>
                                 </div>
                             </div>
 

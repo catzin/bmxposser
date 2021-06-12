@@ -1,3 +1,4 @@
+import { msg } from '../../admin/interfaces/admin.interface';
 
 export interface AuthResponse {
     
@@ -5,7 +6,9 @@ export interface AuthResponse {
     nombre?:string,
     correo?: string,
     token?:string,
-    rol:string
+    rol?:string,
+    msg?:string
+
 
 }
 
@@ -18,4 +21,17 @@ export interface Usuario {
 export interface errorToken{
     ok:boolean,
     msg:string
+}
+
+export interface user {
+    nombre:    string;
+    appaterno: string;
+    email:     string;
+    calle:     string;
+    numeroExt: string;
+    numeroInt: string;
+    colonia:   string;
+    ciudad:    string;
+    estado:    string;
+    cp:        number;
 }

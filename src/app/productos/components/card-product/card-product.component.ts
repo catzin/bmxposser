@@ -12,10 +12,13 @@ import Swal from 'sweetalert2';
 export class CardProductComponent implements OnInit {
 
   @Input() producto !: Producto;
+  cantidad:boolean = false;
 
   constructor(private cars:CarritoService,private router:Router) { }
 
   ngOnInit(): void {
+
+    if(this.producto.cantidad > 0){ this.cantidad = true; }
   }
 
   agregar(){
@@ -23,6 +26,9 @@ export class CardProductComponent implements OnInit {
 
     this.cars.agregarProductoUnico(id).subscribe(resp =>{
 
+      if(resp.ok){
+
+  
       Swal.fire({
         
         position: 'center',
@@ -32,9 +38,14 @@ export class CardProductComponent implements OnInit {
         timer: 1500
 
       })
+      
+      }
+      else{
+
+          this.router.navigateByUrl('/auth');
+
+      }
      
-    },err =>{
-      this.router.navigateByUrl('/auth')
     })
   }
 

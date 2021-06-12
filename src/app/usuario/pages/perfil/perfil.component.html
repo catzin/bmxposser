@@ -1,0 +1,35 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col-12 col-md-4 col-lg-4">
+            <div class="card">
+             
+                <div class="card-body">
+                    <img src="../../../../assets/avatar.png" class="card-img-top" alt="" srcset="">
+                </div>
+               
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-6">
+            <div *ngIf="!bandera;else data">
+                <app-formp></app-formp>
+            </div>
+            <ng-template #data>
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4>{{usuario?.nombre|titlecase}} {{usuario?.appaterno}}</h4>
+                    </div>
+                    <div class="card-body">
+            
+                        <div class="text-center text-dark">Ciudad :{{usuario?.ciudad}}</div>
+                        <div class="text-center text-dark">Estado :{{usuario?.estado}}</div>
+                        <div class="text-center text-dark">Calle :{{usuario?.calle}}</div>
+                        <div class="text-center text-dark">numero Interior :{{usuario?.numeroInt}} numero Exterior :{{usuario?.numeroExt}}</div>
+                    </div>
+                </div>
+                
+            </ng-template>
+          
+           
+        </div>
+    </div>
+</div>

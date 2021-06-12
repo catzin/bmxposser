@@ -1,0 +1,60 @@
+<section class="listado">
+  <div  *ngIf="bandera;else block">
+  <div class="container mt-4 py-5">
+
+        <div class="row mb-3">
+          <div class="col-6 col-md-3">
+            <div class="d-grid">
+              <div class="alert alert-warning" role="alert">
+                {{total}}
+              </div>
+            </div>
+
+          </div>
+
+           <div class="col-6 col-md-3">
+
+            <div class="d-grid">
+              <button class="btn btn-outline-success" (click)="ordenar()">ordenar</button>
+            </div>
+
+          </div>
+            
+
+          </div>
+          <div class="row">
+         
+       
+        <div class="col-12 col-lg-3 col-md-4" *ngFor="let i of listado">
+
+            <app-carrito-card [item] = "i" (onDeleteItem)="eliminarItem($event)"></app-carrito-card>
+       
+        </div>
+
+        </div>
+
+  </div>
+
+  </div>
+
+  <ng-template #block>
+    <div class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md-4 col-lg-4">
+
+        <div class="d-grid">
+          <div class="alert alert-danger text-center">
+            Aun no hay productos
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+    
+  </ng-template>
+
+
+
+</section>

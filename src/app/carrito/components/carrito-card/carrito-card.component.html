@@ -1,0 +1,21 @@
+
+<div class="card border-0 mb-3 bg-light">
+  <div class="card-body">
+    
+    <img [src]="'http://localhost:4000/'+item.img" class="card-img-top"style="border-radius: 10px;" alt="alt=">
+
+    <h6 class="text-center text-dark title-prod mt-3">{{item?.nombre}}</h6>
+    <h5 class="text-center text-success title-prod mt-3">$ {{item?.precio}}</h5>
+    <h6 class="text-center text-primary title-prod mt-3">
+      cantidad:
+      
+    </h6>
+    <h6 class="text-center text-dark">{{item?.cantidad}}</h6>
+   
+    <div class="d-grid mt-2">
+      <button class="btn btn-outline-danger" (click)="eliminar()"> eliminar <i class="fas fa-cart-arrow-down"></i></button>
+    </div>
+                        
+  </div>
+</div>
+

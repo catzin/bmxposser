@@ -3,7 +3,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map,tap} from 'rxjs/operators';
 import { of, Observable } from 'rxjs';
 import { environment } from '../../../environments/environment.prod';
-import { AuthResponse, Usuario } from '../interfaces/interfaces';
+import { AuthResponse, Usuario, user } from '../interfaces/interfaces';
+import { msg } from '../../admin/interfaces/admin.interface';
+
 
 
 @Injectable({
@@ -18,10 +20,10 @@ export class AuthService {
   constructor(private http:HttpClient){}
 
   get Usuario(){
-    return {... this._usuario};
+    return {...this._usuario};
 
   }
-
+   
   login(email:string,pass:string){
     const url = `${this.baseUrl}auth/login`;
     const body = {email,pass};
@@ -40,6 +42,22 @@ export class AuthService {
       map(resp => resp),
       catchError(err => of(err.error))
     )
+
+  }
+
+  registrar(nombre:string,appaterno:string,apmaterno:string,email:string,telefono:string,password:string){
+
+    const url = `${this.baseUrl}auth/registrar`;
+    const body = {nombre,appaterno,apmaterno,email,telefono,password};
+
+    return this.http.post<AuthResponse>(url,body)
+    .pipe(
+     
+      map(resp => resp),
+      catchError(err => of(err.error))
+    )
+
+
 
   }
 
@@ -95,6 +113,30 @@ export class AuthService {
       catchError(err => of(false))
 
     )
+  }
+
+
+  registrarDireccion(calle:string,numi:string,nume:string,colonia:string,ciudad:string,estado:string,cod:number):Observable<msg>{
+   
+    const url = `${this.baseUrl}auth/registrarDireccion`;
+    const body = {calle,nume,numi,colonia,ciudad,estado,cod};
+    const headers = new HttpHeaders()
+    .set('token',localStorage.getItem('token')||'');
+
+    return this.http.post<msg>(url,body,{headers});
+
+
+  }
+
+
+  getInfoUsuario():Observable<user[]>{
+
+     const url = `${this.baseUrl}auth/getInfoUsuario`;
+     const headers = new HttpHeaders()
+     .set('token',localStorage.getItem('token')||'');
+
+     return this.http.get<user[]>(url,{headers});
+
   }
 
 }

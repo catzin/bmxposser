@@ -4,6 +4,7 @@ export interface Producto {
     precio:     number;
     marca:      string;
     img:        string;
+    cantidad: number;
 }
 
 
@@ -15,6 +16,7 @@ export interface Categoria {
 
 export interface msgAdd{
     ok:boolean;
+    band?:number;
     msg:string;
     
 }

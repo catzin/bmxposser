@@ -33,7 +33,8 @@ export class LoginComponent implements OnInit {
     this.authservice.login(email,contra).subscribe(resp => {
 
       if(resp.ok){
-
+        
+      
         if(resp.rol == "admin"){
 
           Swal.fire({
@@ -46,7 +47,7 @@ export class LoginComponent implements OnInit {
             timer: 1000
         
             
-        }).then(result =>{
+        }).then(() =>{
         
 
             this.router.navigateByUrl('/admin');

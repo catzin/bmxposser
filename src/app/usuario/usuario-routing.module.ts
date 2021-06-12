@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CarrioViewComponent } from './pages/carrio-view/carrio-view.component';
-
+import { PerfilComponent } from './pages/perfil/perfil.component';
 
 const routes: Routes = [
   {
@@ -9,7 +8,7 @@ const routes: Routes = [
     children:[
       {
         path:'',
-        component:CarrioViewComponent
+        component:PerfilComponent
       }
     ]
   }
@@ -19,4 +18,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class CarritoRoutingModule { }
+export class UsuarioRoutingModule { }
